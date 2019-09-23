@@ -32,6 +32,15 @@
         "Thu"
       ],
       "answer": "Mon"
+    },
+    {
+      "id": 4,
+      "instruction_text": "What year is it?",
+      "answer_options": [
+        "2019",
+        "2020"
+      ],
+      "answer": "2019"
     }
   ]
 }
