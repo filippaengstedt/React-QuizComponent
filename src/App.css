@@ -1,7 +1,23 @@
+.App {
+  margin: 20%;
+  margin-top: 80px;
+  background-color: rgb(228, 228, 228);
+  padding: 30px;
+  border-radius: 10px;
+}
 .QuizQuestion {
   display: flex;
   justify-content: center;
-  font-size: 2em;
+  font-size: 1.4em;
+  text-align: center;
+  margin:20px;
+}
+.questionArea {
+  background-color: rgb(245, 243, 243);
+  padding: 20px;
+  border-radius: 6px;
+}
+.Header h1 {
   text-align: center;
 }
 .QuizEnd {
@@ -19,6 +35,7 @@
 ul {
   padding: 0;
   margin: 0;
+  list-style: none;
 }
 .buttons {
   display: flex;
@@ -26,10 +43,53 @@ ul {
   text-align: center;
 }
 button {
-  margin: 0.6em auto;
-  font-size: 1.5em;
+  margin: 0.4em auto;
+  font-size: 0.8em;
   display: block;
+  background-color: rgb(204, 139, 41);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  width: 150px;
+  height: 50px;
+}
+button:hover {
+  background-color: rgb(202, 160, 96);
 }
 .error {
   color: red;
+}
+.questionNumber {
+  border: 1px solid black;
+  height: 40px;
+  width: 40px;
+  background-color: rgb(111, 155, 151);
+  color: white;
+  border-radius: 50%;
+  margin: 0px;
+  padding: 0px;
+  border: none;
+  text-align: center;
+}
+.numberAndQuestion {
+  display: flex;
+  margin-bottom: 20px;
+}
+.question {
+  margin: 0px 0px 0px 10px;
+  padding: 0px;
+}
+.score {
+  background-color: rgb(70, 0, 128);
+  color: white;
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  border-radius: 6px;
+}
+.resultSummary {
+  display: flex;
+}
+.resultColumn {
+  margin-right: 40px;
 }
