@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import QuizQuestion from './QuizQuestion'
+import QuizQuestion from '../components/QuizQuestion'
 import QuizEnd from './QuizEnd'
 
-let quizData = require('./quiz_data.json')
+let quizData = require('../quiz_data.json')
 
 class Quiz extends Component {
 
@@ -46,42 +46,38 @@ class Quiz extends Component {
         })
     }
 
-    showResult() {
-        console.log("visa resultat")
-    }
-
-    addAnswer() {
+    addAnswer = (buttonText) => {
+        let answers = [...this.state.answers, buttonText]
         this.setState({
-            answers: [1]
+            answers: answers
         })
+        console.log(this.state.answers)
     }
-
 
     render() {
         const isQuizEnd = ((this.state.quiz_position - 1) === quizData.quiz_questions.length)
-        const rightAnswers = quizData.quiz_questions.map(q => {
-            return (
-                <li>{q.answer}</li>
-            )
+        const userAnswers = this.state.answers.map(a => {
+            return a
         })
-        const userAnswers = "user answers"
-        const questionNumber = quizData.quiz_questions.map(q => {
+        const results = quizData.quiz_questions.map(q => {
             return (
-                <li>Fråga {q.id}:</li>
+                <div className="result">
+                    <h3>{q.id}. {q.instruction_text}</h3>
+                    <p>Your Answer: {userAnswers[q.id - 1]}</p>
+                    <p>Correct Answer: {q.answer}</p>
+                </div>
             )
         })
 
         return (
-            <div>
+            <div className="Quiz">
                 {isQuizEnd ?
                     <QuizEnd
                         resetClickHandler={this.handleResetClick.bind(this)}
-                        showResult={this.showResult.bind(this)}
-                        rightAnswers={rightAnswers}
                         userAnswers={userAnswers}
-                        questionNumber={questionNumber}
                         correctAnswers={this.state.correctAnswers}
                         answeredQuestions={this.state.answeredQuestions}
+                        results={results}
                     /> :
                     <div>
                         <QuizQuestion

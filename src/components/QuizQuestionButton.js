@@ -16,7 +16,7 @@ class QuizQuestionButton extends Component {
 
     render() {
         return (
-            <div>
+            <div className="QuizQuestionButton">
                 <li>
                     <button ref="btn" onClick={this.handleClick.bind(this)}>
                         {this.props.button_text}
